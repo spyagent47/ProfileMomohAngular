@@ -1,0 +1,41 @@
+<section id="skills" class="section section-dark" aria-label="Skills section">
+  <div class="container">
+    <div class="section-title" appAnimateOnScroll>
+      <span class="subtitle">My Skills</span>
+      <h2>Technical Expertise</h2>
+      <p>Technologies and tools I use to bring ideas to life.</p>
+    </div>
+
+    <div class="skills-tabs" appAnimateOnScroll>
+      @for (cat of categories(); track cat.name; let i = $index) {
+        <button
+          class="tab-btn"
+          [class.active]="activeTab() === i"
+          (click)="selectTab(i)"
+          [attr.aria-selected]="activeTab() === i"
+        >
+          {{ cat.name }}
+        </button>
+      }
+    </div>
+
+    <div class="skills-grid" appAnimateOnScroll>
+      @for (skill of categories()[activeTab()]?.skills ?? []; track skill.name) {
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">
+              @if (skill.icon) {
+                <i [class]="skill.icon" aria-hidden="true"></i>
+              }
+              {{ skill.name }}
+            </span>
+            <span class="skill-level">{{ skill.level }}%</span>
+          </div>
+          <div class="skill-bar" role="progressbar" [attr.aria-valuenow]="skill.level" aria-valuemin="0" aria-valuemax="100">
+            <div class="skill-fill" [style.width.%]="skill.level"></div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

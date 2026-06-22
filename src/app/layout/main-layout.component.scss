@@ -1,0 +1,7 @@
+.main-content {
+  min-height: 100vh;
+}
+
+:host ::ng-deep .page-section {
+  padding-top: 100px;
+}

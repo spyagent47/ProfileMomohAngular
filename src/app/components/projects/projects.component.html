@@ -1,0 +1,61 @@
+<section id="projects" class="section section-dark" aria-label="Projects section">
+  <div class="container">
+    <div class="section-title" appAnimateOnScroll>
+      <span class="subtitle">Portfolio</span>
+      <h2>Featured Projects</h2>
+      <p>A showcase of my recent work and side projects.</p>
+    </div>
+
+    <div class="projects-controls" appAnimateOnScroll>
+      <div class="search-box">
+        <i class="fa-solid fa-search" aria-hidden="true"></i>
+        <input
+          type="search"
+          placeholder="Search projects..."
+          (input)="onSearch($event)"
+          aria-label="Search projects"
+        />
+      </div>
+      <div class="filter-tabs">
+        @for (cat of categories(); track cat) {
+          <button
+            class="filter-btn"
+            [class.active]="selectedCategory() === cat"
+            (click)="selectCategory(cat)"
+          >
+            {{ cat }}
+          </button>
+        }
+      </div>
+    </div>
+
+    <div class="projects-grid">
+      @for (project of paginatedProjects(); track project.id) {
+        <div appAnimateOnScroll>
+          <app-project-card [project]="project" />
+        </div>
+      } @empty {
+        <p class="no-results">No projects found matching your criteria.</p>
+      }
+    </div>
+
+    @if (totalPages() > 1) {
+      <div class="pagination" role="navigation" aria-label="Projects pagination">
+        <button (click)="goToPage(currentPage() - 1)" [disabled]="currentPage() === 1" aria-label="Previous page">
+          <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        @for (page of pageNumbers(); track page) {
+          <button
+            [class.active]="currentPage() === page"
+            (click)="goToPage(page)"
+          >
+            {{ page }}
+          </button>
+        }
+        <button (click)="goToPage(currentPage() + 1)" [disabled]="currentPage() === totalPages()" aria-label="Next page">
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </button>
+      </div>
+    }
+  </div>
+</section>

@@ -1,0 +1,63 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.gallery-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 40px;
+}
+
+.filter-btn {
+  padding: 8px 20px;
+  border-radius: 50px;
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  color: var(--text-muted);
+  font-size: 13px;
+  cursor: pointer;
+  transition: $transition;
+
+  &:hover, &.active {
+    background: $gradient-primary;
+    color: white;
+    border-color: transparent;
+  }
+}
+
+.masonry-grid {
+  columns: 3;
+  column-gap: 16px;
+
+  @media (max-width: $breakpoint-lg) { columns: 2; }
+  @media (max-width: $breakpoint-sm) { columns: 1; }
+}
+
+.lightbox-content {
+  text-align: center;
+}
+
+.lightbox-image {
+  width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: $border-radius;
+}
+
+.lightbox-info {
+  margin-top: 16px;
+
+  .lightbox-category {
+    font-size: 12px;
+    font-weight: 600;
+    @include gradient-text;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: 16px;
+    color: var(--text-color);
+    margin-top: 4px;
+  }
+}

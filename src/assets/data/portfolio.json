@@ -1,0 +1,453 @@
+{
+  "navLinks": [
+    { "label": "Home", "route": "/", "icon": "fa-house" },
+    {
+      "label": "About",
+      "route": "/about",
+      "icon": "fa-user",
+      "children": [
+        { "label": "Skills", "route": "/skills", "icon": "fa-code" },
+        { "label": "Education", "route": "/education", "icon": "fa-graduation-cap" },
+        { "label": "Projects", "route": "/", "fragment": "projects", "icon": "fa-folder-open" },
+        { "label": "Services", "route": "/", "fragment": "services", "icon": "fa-briefcase" }
+      ]
+    },
+    { "label": "Gallery", "route": "/gallery", "icon": "fa-images" },
+    { "label": "Blog", "route": "/blog", "icon": "fa-blog" },
+    { "label": "Contact", "route": "/contact", "icon": "fa-envelope" }
+  ],
+  "socialLinks": [
+    { "name": "GitHub", "url": "https://github.com/johndoe", "icon": "fa-brands fa-github" },
+    { "name": "LinkedIn", "url": "https://linkedin.com/in/johndoe", "icon": "fa-brands fa-linkedin" },
+    { "name": "Twitter", "url": "https://twitter.com/johndoe", "icon": "fa-brands fa-twitter" },
+    { "name": "Facebook", "url": "https://facebook.com/johndoe", "icon": "fa-brands fa-facebook" },
+    { "name": "Email", "url": "mailto:john.doe@email.com", "icon": "fa-solid fa-envelope" }
+  ],
+  "hero": {
+    "greeting": "Hi,",
+    "name": "John Doe",
+    "title": "Senior Full Stack Developer",
+    "typingRoles": [
+      "Senior Full Stack Developer",
+      "Angular Architect",
+      "UI/UX Designer",
+      "AutoCAD Specialist",
+      "Cloud Solutions Engineer"
+    ],
+    "techStack": ["Angular", "Spring Boot", "React", "Java", "Node.js"],
+    "description": "I craft elegant, scalable software solutions with a passion for clean architecture and exceptional user experiences. With over 5 years of expertise across the full stack, I transform complex business challenges into intuitive digital products.",
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop&crop=face",
+    "cvUrl": "assets/files/john-doe-cv.pdf",
+    "stats": [
+      { "value": "5+", "label": "Years Experience" },
+      { "value": "100+", "label": "Projects" },
+      { "value": "50+", "label": "Happy Clients" }
+    ]
+  },
+  "about": {
+    "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=600&h=700&fit=crop",
+    "biography": "I am a passionate Senior Software Developer with over 5 years of experience building enterprise-grade applications. My journey began with a Computer Science degree and evolved through roles at startups and Fortune 500 companies. I specialize in Angular, Spring Boot, and cloud-native architectures, always striving to deliver code that is maintainable, performant, and user-centric.",
+    "mission": "To deliver innovative software solutions that empower businesses and delight users through thoughtful engineering and design excellence.",
+    "vision": "To be a leading architect of digital transformation, bridging the gap between complex technology and human-centered experiences.",
+    "goals": [
+      "Lead high-impact engineering teams on mission-critical products",
+      "Contribute to open-source projects and mentor junior developers",
+      "Master emerging technologies in AI and cloud computing",
+      "Build products that positively impact millions of users"
+    ],
+    "personalInfo": {
+      "location": "San Francisco, CA",
+      "email": "john.doe@email.com",
+      "phone": "+1 (555) 123-4567",
+      "languages": ["English (Native)", "Spanish (Fluent)", "French (Intermediate)"],
+      "nationality": "American",
+      "availability": "Available for freelance & full-time",
+      "freelancerStatus": "Open to Projects"
+    },
+    "timeline": [
+      { "year": "2024", "title": "Senior Developer at TechCorp", "description": "Leading frontend architecture for enterprise SaaS platform serving 2M+ users." },
+      { "year": "2022", "title": "Full Stack Developer at InnovateLabs", "description": "Built microservices ecosystem with Spring Boot and Angular." },
+      { "year": "2020", "title": "Junior Developer at StartupHub", "description": "Developed MVP products and gained full-stack expertise." },
+      { "year": "2019", "title": "Computer Science Graduate", "description": "B.S. in Computer Science from Stanford University." }
+    ]
+  },
+  "skills": [
+    {
+      "name": "Frontend",
+      "skills": [
+        { "name": "Angular", "level": 95, "icon": "fa-brands fa-angular" },
+        { "name": "React", "level": 88, "icon": "fa-brands fa-react" },
+        { "name": "Vue", "level": 75, "icon": "fa-brands fa-vuejs" },
+        { "name": "HTML", "level": 98, "icon": "fa-brands fa-html5" },
+        { "name": "CSS", "level": 92, "icon": "fa-brands fa-css3-alt" },
+        { "name": "Bootstrap", "level": 90, "icon": "fa-brands fa-bootstrap" },
+        { "name": "Tailwind", "level": 85, "icon": "fa-solid fa-wind" },
+        { "name": "JavaScript", "level": 93, "icon": "fa-brands fa-js" },
+        { "name": "TypeScript", "level": 94, "icon": "fa-solid fa-code" }
+      ]
+    },
+    {
+      "name": "Backend",
+      "skills": [
+        { "name": "Java", "level": 92, "icon": "fa-brands fa-java" },
+        { "name": "Spring Boot", "level": 90, "icon": "fa-solid fa-leaf" },
+        { "name": "Node.js", "level": 87, "icon": "fa-brands fa-node-js" },
+        { "name": "Express", "level": 85, "icon": "fa-solid fa-server" },
+        { "name": "Python", "level": 80, "icon": "fa-brands fa-python" },
+        { "name": "PHP", "level": 72, "icon": "fa-brands fa-php" }
+      ]
+    },
+    {
+      "name": "Databases",
+      "skills": [
+        { "name": "MySQL", "level": 88, "icon": "fa-solid fa-database" },
+        { "name": "PostgreSQL", "level": 85, "icon": "fa-solid fa-database" },
+        { "name": "Oracle", "level": 78, "icon": "fa-solid fa-database" },
+        { "name": "MongoDB", "level": 82, "icon": "fa-solid fa-leaf" },
+        { "name": "Firebase", "level": 80, "icon": "fa-solid fa-fire" }
+      ]
+    },
+    {
+      "name": "DevOps",
+      "skills": [
+        { "name": "Docker", "level": 85, "icon": "fa-brands fa-docker" },
+        { "name": "Git", "level": 95, "icon": "fa-brands fa-git-alt" },
+        { "name": "GitHub", "level": 93, "icon": "fa-brands fa-github" },
+        { "name": "CI/CD", "level": 82, "icon": "fa-solid fa-arrows-rotate" },
+        { "name": "Linux", "level": 80, "icon": "fa-brands fa-linux" }
+      ]
+    },
+    {
+      "name": "Cloud",
+      "skills": [
+        { "name": "AWS", "level": 85, "icon": "fa-brands fa-aws" },
+        { "name": "Azure", "level": 78, "icon": "fa-brands fa-microsoft" },
+        { "name": "Google Cloud", "level": 75, "icon": "fa-brands fa-google" }
+      ]
+    }
+  ],
+  "services": [
+    { "id": 1, "title": "Web Development", "description": "Custom web applications built with modern frameworks, responsive design, and optimal performance.", "icon": "fa-solid fa-globe" },
+    { "id": 2, "title": "Mobile Apps", "description": "Cross-platform mobile solutions with native-like performance and seamless user experiences.", "icon": "fa-solid fa-mobile-screen" },
+    { "id": 3, "title": "Desktop Applications", "description": "Robust desktop software for Windows, macOS, and Linux with modern UI frameworks.", "icon": "fa-solid fa-desktop" },
+    { "id": 4, "title": "API Development", "description": "RESTful and GraphQL APIs designed for scalability, security, and developer-friendly documentation.", "icon": "fa-solid fa-plug" },
+    { "id": 5, "title": "Database Design", "description": "Efficient database schemas, query optimization, and data migration strategies.", "icon": "fa-solid fa-database" },
+    { "id": 6, "title": "UI/UX Design", "description": "User-centered design with wireframes, prototypes, and pixel-perfect implementations.", "icon": "fa-solid fa-palette" },
+    { "id": 7, "title": "Cloud Solutions", "description": "Cloud infrastructure setup, deployment pipelines, and cost-optimized architectures.", "icon": "fa-solid fa-cloud" },
+    { "id": 8, "title": "Consultancy", "description": "Technical advisory on architecture decisions, code reviews, and technology roadmaps.", "icon": "fa-solid fa-comments" },
+    { "id": 9, "title": "System Design", "description": "Scalable system architectures for high-traffic applications and distributed systems.", "icon": "fa-solid fa-sitemap" },
+    { "id": 10, "title": "Software Architecture", "description": "Enterprise-grade architecture patterns, microservices, and clean code practices.", "icon": "fa-solid fa-diagram-project" }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "E-Commerce Platform",
+      "description": "Full-featured online marketplace with real-time inventory, payment processing, and admin dashboard.",
+      "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
+      "technologies": ["Angular", "Spring Boot", "PostgreSQL", "Redis"],
+      "category": "Angular",
+      "status": "Completed",
+      "githubUrl": "https://github.com/johndoe/ecommerce",
+      "liveUrl": "https://demo-ecommerce.example.com"
+    },
+    {
+      "id": 2,
+      "title": "Healthcare Management System",
+      "description": "HIPAA-compliant patient management system with appointment scheduling and telemedicine integration.",
+      "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop",
+      "technologies": ["React", "Node.js", "MongoDB", "AWS"],
+      "category": "React",
+      "status": "Completed",
+      "githubUrl": "https://github.com/johndoe/healthcare",
+      "liveUrl": "https://healthcare-demo.example.com"
+    },
+    {
+      "id": 3,
+      "title": "FinTech Analytics Dashboard",
+      "description": "Real-time financial analytics platform with interactive charts and automated reporting.",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+      "technologies": ["Angular", "Java", "Spring Boot", "MySQL"],
+      "category": "Spring Boot",
+      "status": "Completed",
+      "githubUrl": "https://github.com/johndoe/fintech",
+      "liveUrl": "https://fintech-demo.example.com"
+    },
+    {
+      "id": 4,
+      "title": "AI Content Generator",
+      "description": "Machine learning powered content creation tool with natural language processing capabilities.",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop",
+      "technologies": ["Python", "TensorFlow", "React", "FastAPI"],
+      "category": "AI",
+      "status": "In Progress",
+      "githubUrl": "https://github.com/johndoe/ai-content",
+      "liveUrl": "https://ai-content.example.com"
+    },
+    {
+      "id": 5,
+      "title": "Task Management App",
+      "description": "Collaborative project management tool with Kanban boards, time tracking, and team chat.",
+      "image": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
+      "technologies": ["Angular", "Node.js", "Express", "Socket.io"],
+      "category": "Node",
+      "status": "Completed",
+      "githubUrl": "https://github.com/johndoe/taskmanager",
+      "liveUrl": "https://tasks-demo.example.com"
+    },
+    {
+      "id": 6,
+      "title": "Fitness Tracking Mobile App",
+      "description": "Cross-platform fitness app with workout plans, nutrition tracking, and social features.",
+      "image": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&h=400&fit=crop",
+      "technologies": ["React Native", "Firebase", "Node.js"],
+      "category": "Mobile",
+      "status": "Completed",
+      "githubUrl": "https://github.com/johndoe/fitness-app",
+      "liveUrl": "https://fitness-demo.example.com"
+    },
+    {
+      "id": 7,
+      "title": "Inventory Management System",
+      "description": "Enterprise inventory tracking with barcode scanning, supplier management, and analytics.",
+      "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=400&fit=crop",
+      "technologies": ["Java", "Spring Boot", "Oracle", "Angular"],
+      "category": "Java",
+      "status": "Completed",
+      "githubUrl": "https://github.com/johndoe/inventory",
+      "liveUrl": "https://inventory-demo.example.com"
+    },
+    {
+      "id": 8,
+      "title": "Real Estate Portal",
+      "description": "Property listing platform with virtual tours, mortgage calculator, and agent matching.",
+      "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop",
+      "technologies": ["Angular", "Python", "Django", "PostgreSQL"],
+      "category": "Python",
+      "status": "In Progress",
+      "githubUrl": "https://github.com/johndoe/realestate",
+      "liveUrl": "https://realestate-demo.example.com"
+    },
+    {
+      "id": 9,
+      "title": "Social Media Dashboard",
+      "description": "Unified social media management platform with scheduling, analytics, and engagement tools.",
+      "image": "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=600&h=400&fit=crop",
+      "technologies": ["React", "Node.js", "MongoDB", "Redis"],
+      "category": "React",
+      "status": "Completed",
+      "githubUrl": "https://github.com/johndoe/social-dashboard",
+      "liveUrl": "https://social-demo.example.com"
+    }
+  ],
+  "gallery": [
+    { "id": 1, "title": "Workspace Setup", "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop", "category": "Workspace" },
+    { "id": 2, "title": "Team Collaboration", "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=600&fit=crop", "category": "Team" },
+    { "id": 3, "title": "Code Review Session", "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&h=400&fit=crop", "category": "Development" },
+    { "id": 4, "title": "Conference Talk", "image": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=500&fit=crop", "category": "Events" },
+    { "id": 5, "title": "UI Design Process", "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=700&fit=crop", "category": "Design" },
+    { "id": 6, "title": "Server Infrastructure", "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop", "category": "DevOps" },
+    { "id": 7, "title": "Mobile Development", "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=500&fit=crop", "category": "Mobile" },
+    { "id": 8, "title": "Hackathon Victory", "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=400&fit=crop", "category": "Events" },
+    { "id": 9, "title": "Architecture Planning", "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=600&fit=crop", "category": "Development" }
+  ],
+  "experience": [
+    {
+      "id": 1,
+      "company": "TechCorp Solutions",
+      "position": "Senior Software Developer",
+      "duration": "Jan 2022 - Present",
+      "location": "San Francisco, CA",
+      "responsibilities": [
+        "Lead frontend architecture for enterprise SaaS platform serving 2M+ users",
+        "Mentor team of 5 junior developers and conduct code reviews",
+        "Design and implement microservices using Spring Boot and Angular",
+        "Optimize application performance achieving 40% faster load times"
+      ],
+      "achievements": [
+        "Reduced deployment time by 60% through CI/CD pipeline improvements",
+        "Led migration from monolith to microservices architecture",
+        "Received Employee of the Year award in 2023"
+      ]
+    },
+    {
+      "id": 2,
+      "company": "InnovateLabs Inc.",
+      "position": "Full Stack Developer",
+      "duration": "Mar 2020 - Dec 2021",
+      "location": "Austin, TX",
+      "responsibilities": [
+        "Developed full-stack features for B2B SaaS product",
+        "Built RESTful APIs with Node.js and Express",
+        "Created responsive UI components with React and TypeScript",
+        "Collaborated with product team on feature specifications"
+      ],
+      "achievements": [
+        "Delivered 15+ major features ahead of schedule",
+        "Improved test coverage from 45% to 92%",
+        "Implemented real-time notification system used by 500K users"
+      ]
+    },
+    {
+      "id": 3,
+      "company": "StartupHub",
+      "position": "Junior Software Developer",
+      "duration": "Jun 2019 - Feb 2020",
+      "location": "Remote",
+      "responsibilities": [
+        "Built MVP products for early-stage startups",
+        "Developed responsive websites using HTML, CSS, and JavaScript",
+        "Assisted in database design and API development",
+        "Participated in agile ceremonies and sprint planning"
+      ],
+      "achievements": [
+        "Successfully launched 3 client products from concept to production",
+        "Learned Angular and Spring Boot through intensive self-study",
+        "Promoted to Full Stack Developer within 8 months"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "id": 1,
+      "institution": "Stanford University",
+      "degree": "B.S. Computer Science",
+      "duration": "2015 - 2019",
+      "description": "Focused on software engineering, algorithms, and distributed systems. Graduated with honors.",
+      "courses": ["Data Structures & Algorithms", "Software Engineering", "Database Systems", "Machine Learning", "Computer Networks"]
+    },
+    {
+      "id": 2,
+      "institution": "Coursera / Google",
+      "degree": "Google IT Automation with Python",
+      "duration": "2020",
+      "description": "Professional certificate in Python automation, Git, and IT troubleshooting.",
+      "courses": ["Python Programming", "Git Version Control", "Automation with Python", "Troubleshooting"]
+    },
+    {
+      "id": 3,
+      "institution": "Udacity",
+      "degree": "Full Stack Web Developer Nanodegree",
+      "duration": "2019",
+      "description": "Intensive program covering frontend, backend, and deployment best practices.",
+      "courses": ["HTML & CSS", "JavaScript", "Python & Flask", "Linux Command Line", "AWS Deployment"]
+    }
+  ],
+  "certificates": [
+    {
+      "id": 1,
+      "title": "AWS Certified Solutions Architect",
+      "institution": "Amazon Web Services",
+      "date": "March 2023",
+      "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop",
+      "downloadUrl": "assets/files/aws-cert.pdf"
+    },
+    {
+      "id": 2,
+      "title": "Angular Advanced Certification",
+      "institution": "Google / Angular Team",
+      "date": "January 2023",
+      "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400&h=300&fit=crop",
+      "downloadUrl": "assets/files/angular-cert.pdf"
+    },
+    {
+      "id": 3,
+      "title": "Oracle Certified Java Programmer",
+      "institution": "Oracle Corporation",
+      "date": "June 2022",
+      "image": "https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=400&h=300&fit=crop",
+      "downloadUrl": "assets/files/java-cert.pdf"
+    },
+    {
+      "id": 4,
+      "title": "Professional Scrum Master I",
+      "institution": "Scrum.org",
+      "date": "September 2021",
+      "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
+      "downloadUrl": "assets/files/scrum-cert.pdf"
+    }
+  ],
+  "statistics": [
+    { "id": 1, "label": "Projects Completed", "value": 100, "suffix": "+", "icon": "fa-solid fa-folder-open" },
+    { "id": 2, "label": "Happy Clients", "value": 50, "suffix": "+", "icon": "fa-solid fa-users" },
+    { "id": 3, "label": "Years Experience", "value": 5, "suffix": "+", "icon": "fa-solid fa-clock" },
+    { "id": 4, "label": "Awards Won", "value": 12, "suffix": "", "icon": "fa-solid fa-trophy" },
+    { "id": 5, "label": "Coffee Cups", "value": 2500, "suffix": "+", "icon": "fa-solid fa-mug-hot" }
+  ],
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Sarah Mitchell",
+      "position": "CTO",
+      "company": "TechCorp Solutions",
+      "review": "John is an exceptional developer who consistently delivers high-quality code. His architectural decisions have transformed our platform's performance and maintainability. A true asset to any engineering team.",
+      "rating": 5,
+      "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face"
+    },
+    {
+      "id": 2,
+      "name": "Michael Chen",
+      "position": "Product Manager",
+      "company": "InnovateLabs Inc.",
+      "review": "Working with John was a game-changer for our product. He understood our vision immediately and translated it into a beautiful, functional application. His attention to detail is remarkable.",
+      "rating": 5,
+      "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+    },
+    {
+      "id": 3,
+      "name": "Emily Rodriguez",
+      "position": "Founder & CEO",
+      "company": "StartupHub",
+      "review": "John helped us launch our MVP in record time. His full-stack expertise and problem-solving skills are outstanding. I wouldn't hesitate to recommend him for any complex software project.",
+      "rating": 5,
+      "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
+    },
+    {
+      "id": 4,
+      "name": "David Park",
+      "position": "Engineering Director",
+      "company": "CloudScale Systems",
+      "review": "John's expertise in Angular and cloud architecture helped us modernize our legacy systems. He's a collaborative team player who elevates everyone around him.",
+      "rating": 5,
+      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face"
+    }
+  ],
+  "blog": [
+    {
+      "id": 1,
+      "title": "Building Scalable Angular Applications in 2025",
+      "excerpt": "Learn enterprise patterns for structuring large Angular applications with standalone components, signals, and lazy loading.",
+      "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=600&h=400&fit=crop",
+      "date": "June 10, 2025",
+      "category": "Angular",
+      "readTime": "8 min read",
+      "url": "#"
+    },
+    {
+      "id": 2,
+      "title": "Microservices with Spring Boot: A Practical Guide",
+      "excerpt": "Step-by-step guide to designing and implementing microservices architecture using Spring Boot and Docker.",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop",
+      "date": "May 22, 2025",
+      "category": "Backend",
+      "readTime": "12 min read",
+      "url": "#"
+    },
+    {
+      "id": 3,
+      "title": "Mastering TypeScript for Full Stack Development",
+      "excerpt": "Advanced TypeScript patterns and best practices for building type-safe full stack applications.",
+      "image": "https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=600&h=400&fit=crop",
+      "date": "April 15, 2025",
+      "category": "TypeScript",
+      "readTime": "10 min read",
+      "url": "#"
+    }
+  ],
+  "contact": {
+    "email": "john.doe@email.com",
+    "phone": "+1 (555) 123-4567",
+    "address": "123 Tech Street, San Francisco, CA 94102",
+    "whatsapp": "+15551234567",
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.097715810927!2d-122.4194155!3d37.7749295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c6c8f4459%3A0xb10ed6d9b5050fa5!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+  }
+}

@@ -1,0 +1,16 @@
+<section id="statistics" class="section stats-section" aria-label="Statistics section">
+  <div class="stats-bg"></div>
+  <div class="container">
+    <div class="stats-grid">
+      @for (stat of statistics(); track stat.id) {
+        <div class="stat-card" appAnimateOnScroll>
+          <div class="stat-icon">
+            <i [class]="stat.icon" aria-hidden="true"></i>
+          </div>
+          <span class="stat-number" [appCountUp]="stat.value" [countSuffix]="stat.suffix">0</span>
+          <span class="stat-label">{{ stat.label }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>

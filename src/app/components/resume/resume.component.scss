@@ -1,0 +1,38 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.resume-section {
+  padding: 60px 0;
+}
+
+.resume-content {
+  text-align: center;
+  padding: 60px 40px;
+  max-width: 600px;
+  margin: 0 auto;
+
+  h2 {
+    font-size: 28px;
+    color: var(--text-color);
+    margin-bottom: 12px;
+  }
+
+  p {
+    color: var(--text-muted);
+    margin-bottom: 28px;
+    font-size: 15px;
+  }
+}
+
+.resume-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: $gradient-primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  font-size: 32px;
+  color: white;
+}

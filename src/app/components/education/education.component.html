@@ -1,0 +1,31 @@
+<section id="education" class="section" aria-label="Education section">
+  <div class="container">
+    <div class="section-title" appAnimateOnScroll>
+      <span class="subtitle">Education</span>
+      <h2>Academic Background</h2>
+      <p>My educational journey and continuous learning path.</p>
+    </div>
+
+    <div class="education-grid">
+      @for (edu of education(); track edu.id) {
+        <div class="edu-card card-base" appAnimateOnScroll>
+          <div class="edu-icon">
+            <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+          </div>
+          <div class="edu-duration">{{ edu.duration }}</div>
+          <h3>{{ edu.degree }}</h3>
+          <span class="edu-institution">{{ edu.institution }}</span>
+          <p>{{ edu.description }}</p>
+          <div class="edu-courses">
+            <h4>Courses</h4>
+            <div class="course-tags">
+              @for (course of edu.courses; track course) {
+                <span class="course-tag">{{ course }}</span>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

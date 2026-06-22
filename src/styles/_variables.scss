@@ -1,0 +1,31 @@
+// Color Theme Variables
+$primary: #38bdf8;
+$secondary: #c084fc;
+$accent: #7c3aed;
+$bg-light: #f8fafc;
+$bg-dark: #0f172a;
+$text-primary: #1e293b;
+$text-light: #f1f5f9;
+$text-muted: #64748b;
+$card-bg: #ffffff;
+$card-bg-dark: #1e293b;
+$gradient-primary: linear-gradient(135deg, $primary 0%, $secondary 100%);
+$gradient-hover: linear-gradient(135deg, $primary 0%, $accent 50%, $secondary 100%);
+$shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+$shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
+$shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.12);
+$shadow-hover: 0 12px 40px rgba(56, 189, 248, 0.2);
+$border-radius: 12px;
+$border-radius-lg: 20px;
+$border-radius-xl: 30px;
+$transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+$font-primary: 'Poppins', sans-serif;
+$font-secondary: 'Inter', sans-serif;
+$navbar-height: 80px;
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;

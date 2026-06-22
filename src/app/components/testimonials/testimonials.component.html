@@ -1,0 +1,48 @@
+<section id="testimonials" class="section" aria-label="Testimonials section">
+  <div class="container">
+    <div class="section-title" appAnimateOnScroll>
+      <span class="subtitle">Testimonials</span>
+      <h2>Client Reviews</h2>
+      <p>What clients and colleagues say about working with me.</p>
+    </div>
+
+    <div class="testimonial-carousel" appAnimateOnScroll>
+      @if (testimonials()[activeIndex()]; as testimonial) {
+        <div class="testimonial-card card-base">
+          <div class="quote-icon"><i class="fa-solid fa-quote-left" aria-hidden="true"></i></div>
+          <div class="stars" [attr.aria-label]="testimonial.rating + ' out of 5 stars'">
+            @for (star of [1,2,3,4,5]; track star) {
+              <i [class]="star <= testimonial.rating ? 'fa-solid fa-star' : 'fa-regular fa-star'" aria-hidden="true"></i>
+            }
+          </div>
+          <p class="review-text">"{{ testimonial.review }}"</p>
+          <div class="reviewer">
+            <img [src]="testimonial.image" [alt]="testimonial.name" class="reviewer-img" loading="lazy" />
+            <div>
+              <strong>{{ testimonial.name }}</strong>
+              <span>{{ testimonial.position }}, {{ testimonial.company }}</span>
+            </div>
+          </div>
+        </div>
+      }
+
+      <div class="carousel-controls">
+        <button (click)="prev()" aria-label="Previous testimonial">
+          <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <div class="carousel-dots">
+          @for (t of testimonials(); track t.id; let i = $index) {
+            <button
+              [class.active]="activeIndex() === i"
+              (click)="goTo(i)"
+              [attr.aria-label]="'Go to testimonial ' + (i + 1)"
+            ></button>
+          }
+        </div>
+        <button (click)="next()" aria-label="Next testimonial">
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

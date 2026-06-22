@@ -1,0 +1,19 @@
+<section id="services" class="section" aria-label="Services section">
+  <div class="container">
+    <div class="section-title" appAnimateOnScroll>
+      <span class="subtitle">Services</span>
+      <h2>What I Offer</h2>
+      <p>Comprehensive software development services tailored to your needs.</p>
+    </div>
+
+    <div class="services-grid">
+      @for (service of services(); track service.id) {
+        <div appAnimateOnScroll [class]="'animate-delay-' + (($index % 5) + 1)">
+          <app-section-card [title]="service.title" [icon]="service.icon">
+            {{ service.description }}
+          </app-section-card>
+        </div>
+      }
+    </div>
+  </div>
+</section>

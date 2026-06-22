@@ -1,0 +1,27 @@
+<section id="certificates" class="section section-dark" aria-label="Certificates section">
+  <div class="container">
+    <div class="section-title" appAnimateOnScroll>
+      <span class="subtitle">Certifications</span>
+      <h2>Professional Certificates</h2>
+      <p>Validated expertise through industry-recognized certifications.</p>
+    </div>
+
+    <div class="certificates-grid">
+      @for (cert of certificates(); track cert.id) {
+        <div class="cert-card card-base" appAnimateOnScroll>
+          <div class="cert-image">
+            <img [src]="cert.image" [alt]="cert.title" loading="lazy" appLazyImage />
+          </div>
+          <div class="cert-body">
+            <h3>{{ cert.title }}</h3>
+            <span class="cert-institution">{{ cert.institution }}</span>
+            <span class="cert-date"><i class="fa-solid fa-calendar" aria-hidden="true"></i> {{ cert.date }}</span>
+            <a [href]="cert.downloadUrl" class="btn-download" download>
+              <i class="fa-solid fa-download" aria-hidden="true"></i> Download
+            </a>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

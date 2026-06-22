@@ -1,0 +1,24 @@
+@if (isLoading()) {
+  <app-loader />
+} @else if (data(); as portfolio) {
+  <app-navbar
+    [navLinks]="portfolio.navLinks"
+    [socialLinks]="portfolio.socialLinks"
+    [profileImage]="portfolio.hero.image"
+    [authorName]="portfolio.hero.name"
+    [authorTitle]="portfolio.hero.title"
+    [cvUrl]="portfolio.hero.cvUrl"
+  />
+
+  <main class="main-content">
+    <router-outlet />
+  </main>
+
+  <app-footer
+    [navLinks]="portfolio.navLinks"
+    [socialLinks]="portfolio.socialLinks"
+    [authorName]="portfolio.hero.name"
+    [authorTitle]="portfolio.hero.title"
+    [biography]="portfolio.about.biography"
+  />
+}

@@ -1,0 +1,99 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.projects-controls {
+  margin-bottom: 40px;
+}
+
+.search-box {
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto 24px;
+
+  i {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748b;
+  }
+
+  input {
+    width: 100%;
+    padding: 14px 16px 14px 44px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    font-size: 14px;
+    outline: none;
+    transition: $transition;
+
+    &::placeholder { color: #64748b; }
+    &:focus { border-color: $primary; box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2); }
+  }
+}
+
+.filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.filter-btn {
+  padding: 8px 18px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: transparent;
+  color: #94a3b8;
+  font-size: 13px;
+  cursor: pointer;
+  transition: $transition;
+
+  &:hover, &.active {
+    background: $gradient-primary;
+    color: white;
+    border-color: transparent;
+  }
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #94a3b8;
+  padding: 40px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 40px;
+
+  button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: transparent;
+    color: #94a3b8;
+    cursor: pointer;
+    transition: $transition;
+    font-size: 14px;
+
+    &:hover:not(:disabled), &.active {
+      background: $gradient-primary;
+      color: white;
+      border-color: transparent;
+    }
+
+    &:disabled { opacity: 0.4; cursor: not-allowed; }
+  }
+}

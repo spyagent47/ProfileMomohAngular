@@ -1,0 +1,39 @@
+<section id="gallery" class="section" aria-label="Gallery section">
+  <div class="container">
+    <div class="section-title" appAnimateOnScroll>
+      <span class="subtitle">Gallery</span>
+      <h2>Visual Showcase</h2>
+      <p>Snapshots from my professional journey and creative work.</p>
+    </div>
+
+    <div class="gallery-filters" appAnimateOnScroll>
+      @for (cat of categories(); track cat) {
+        <button
+          class="filter-btn"
+          [class.active]="selectedCategory() === cat"
+          (click)="selectCategory(cat)"
+        >
+          {{ cat }}
+        </button>
+      }
+    </div>
+
+    <div class="masonry-grid" appAnimateOnScroll>
+      @for (item of filteredItems(); track item.id) {
+        <app-gallery-card [item]="item" (select)="openLightbox($event)" />
+      }
+    </div>
+  </div>
+
+  <app-modal [isOpen]="isLightboxOpen()" [title]="lightboxItem()?.title ?? ''" (closed)="closeLightbox()">
+    @if (lightboxItem(); as item) {
+      <div class="lightbox-content">
+        <img [src]="item.image" [alt]="item.title" class="lightbox-image" />
+        <div class="lightbox-info">
+          <span class="lightbox-category">{{ item.category }}</span>
+          <p>{{ item.title }}</p>
+        </div>
+      </div>
+    }
+  </app-modal>
+</section>

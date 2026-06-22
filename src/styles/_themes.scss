@@ -1,0 +1,47 @@
+@use 'variables' as *;
+
+:root {
+  --primary: #{$primary};
+  --secondary: #{$secondary};
+  --accent: #{$accent};
+  --bg-color: #{$bg-light};
+  --bg-dark-section: #{$bg-dark};
+  --text-color: #{$text-primary};
+  --text-muted: #{$text-muted};
+  --card-bg: #{$card-bg};
+  --navbar-bg: rgba(248, 250, 252, 0.8);
+  --border-color: rgba(0, 0, 0, 0.08);
+  --shadow: #{$shadow-md};
+  --gradient: #{$gradient-primary};
+}
+
+[data-theme='dark'] {
+  --bg-color: #0f172a;
+  --text-color: #{$text-light};
+  --text-muted: #94a3b8;
+  --card-bg: #{$card-bg-dark};
+  --navbar-bg: rgba(15, 23, 42, 0.85);
+  --border-color: rgba(255, 255, 255, 0.08);
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.section-dark {
+  background-color: var(--bg-dark-section);
+  color: $text-light;
+}
+
+.card-themed {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+}
+
+.text-muted-themed {
+  color: var(--text-muted);
+}

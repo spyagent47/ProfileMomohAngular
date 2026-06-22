@@ -1,0 +1,125 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.experience-timeline {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 28px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: $gradient-primary;
+  }
+}
+
+.exp-item {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 32px;
+  position: relative;
+}
+
+.exp-marker {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: $gradient-primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  z-index: 1;
+  color: white;
+  font-size: 20px;
+  box-shadow: 0 0 0 4px var(--bg-dark-section);
+}
+
+.exp-card {
+  flex: 1;
+  padding: 28px;
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  h3 {
+    font-size: 20px;
+    color: var(--text-color);
+    margin-bottom: 4px;
+  }
+}
+
+.exp-company {
+  font-size: 15px;
+  font-weight: 600;
+  @include gradient-text;
+}
+
+.exp-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: right;
+
+  span {
+    font-size: 13px;
+    color: var(--text-muted);
+
+    i { margin-right: 6px; color: $primary; }
+  }
+}
+
+.exp-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.exp-section {
+  h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 10px;
+
+    i { color: $primary; margin-right: 6px; }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    font-size: 13px;
+    color: var(--text-muted);
+    padding: 4px 0 4px 16px;
+    position: relative;
+    line-height: 1.6;
+
+    &::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: $primary;
+    }
+  }
+
+  .achievements li::before { content: '★'; color: $secondary; }
+}
+
+@media (max-width: $breakpoint-md) {
+  .exp-body { grid-template-columns: 1fr; }
+  .exp-meta { text-align: left; }
+}

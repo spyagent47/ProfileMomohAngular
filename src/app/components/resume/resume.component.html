@@ -1,0 +1,16 @@
+<section id="resume" class="section resume-section" aria-label="Resume section">
+  <div class="container">
+    <div class="resume-content card-base" appAnimateOnScroll>
+      <div class="resume-icon">
+        <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+      </div>
+      <h2>Download My Resume</h2>
+      <p>Get a comprehensive overview of my skills, experience, and qualifications in PDF format.</p>
+      <app-gradient-button icon="fa-solid fa-download">
+        <a [href]="cvUrl()" download class="text-white text-decoration-none">
+          Download {{ authorName() }}'s CV
+        </a>
+      </app-gradient-button>
+    </div>
+  </div>
+</section>

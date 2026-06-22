@@ -1,0 +1,133 @@
+<nav
+  class="navbar"
+  [class.scrolled]="isScrolled()"
+  [class.menu-open]="isMenuOpen()"
+  role="navigation"
+  aria-label="Main navigation"
+>
+  <div class="container">
+    <div class="navbar-inner">
+      <a class="navbar-brand" routerLink="/" (click)="closeMenu()" aria-label="Go to home">
+        <img [src]="profileImage()" [alt]="authorName() + ' profile picture'" class="profile-img" loading="eager" />
+        <div class="brand-text">
+          <span class="brand-name">{{ authorName() }}</span>
+          <span class="brand-title">{{ authorTitle() }}</span>
+        </div>
+      </a>
+
+      <div class="nav-links" [class.active]="isMenuOpen()">
+        <ul class="nav-list" role="menubar">
+          @for (link of navLinks(); track link.route) {
+            @if (link.children?.length) {
+              <li
+                class="nav-item has-submenu"
+                role="none"
+                [class.open]="isSubmenuOpen(link.route)"
+              >
+                <div class="nav-link-row">
+                  <a
+                    [routerLink]="link.route"
+                    routerLinkActive="active"
+                    [class.active]="isSubmenuActive(link)"
+                    class="nav-link"
+                    role="menuitem"
+                    (click)="closeMenu()"
+                  >
+                    @if (link.icon) {
+                      <i class="fa-solid {{ link.icon }}" aria-hidden="true"></i>
+                    }
+                    {{ link.label }}
+                  </a>
+                  <button
+                    type="button"
+                    class="submenu-toggle"
+                    (click)="toggleSubmenu(link.route, $event)"
+                    [attr.aria-expanded]="isSubmenuOpen(link.route)"
+                    [attr.aria-label]="'Toggle ' + link.label + ' submenu'"
+                  >
+                    <i class="fa-solid fa-chevron-down submenu-chevron" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <ul class="submenu" role="menu" [attr.aria-label]="link.label + ' submenu'">
+                  @for (child of link.children; track child.route + (child.fragment ?? '')) {
+                    <li role="none">
+                      <a
+                        [routerLink]="child.route"
+                        [fragment]="child.fragment"
+                        [class.active]="isLinkActive(child)"
+                        class="submenu-link"
+                        role="menuitem"
+                        (click)="closeMenu()"
+                      >
+                        @if (child.icon) {
+                          <i class="fa-solid {{ child.icon }}" aria-hidden="true"></i>
+                        }
+                        {{ child.label }}
+                      </a>
+                    </li>
+                  }
+                </ul>
+              </li>
+            } @else {
+              <li role="none">
+                <a
+                  [routerLink]="link.route"
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: link.route === '/' }"
+                  class="nav-link"
+                  role="menuitem"
+                  (click)="closeMenu()"
+                >
+                  @if (link.icon) {
+                    <i class="fa-solid {{ link.icon }}" aria-hidden="true"></i>
+                  }
+                  {{ link.label }}
+                </a>
+              </li>
+            }
+          }
+        </ul>
+
+        <div class="nav-actions">
+          <a [href]="cvUrl()" class="btn-resume" download aria-label="Download resume">
+            <i class="fa-solid fa-download" aria-hidden="true"></i>
+            Resume
+          </a>
+
+          <button
+            class="btn-theme"
+            (click)="toggleTheme()"
+            [attr.aria-label]="isDarkMode() ? 'Switch to light mode' : 'Switch to dark mode'"
+          >
+            <i [class]="isDarkMode() ? 'fa-solid fa-sun' : 'fa-solid fa-moon'" aria-hidden="true"></i>
+          </button>
+
+          <div class="social-icons" aria-label="Social media links">
+            @for (social of socialLinks(); track social.name) {
+              <a
+                [href]="social.url"
+                [attr.aria-label]="social.name"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-link"
+              >
+                <i [class]="social.icon" aria-hidden="true"></i>
+              </a>
+            }
+          </div>
+        </div>
+      </div>
+
+      <button
+        class="hamburger"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="isMenuOpen()"
+        aria-label="Toggle navigation menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</nav>

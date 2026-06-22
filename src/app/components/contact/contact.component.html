@@ -1,0 +1,111 @@
+<section id="contact" class="section" aria-label="Contact section">
+  <div class="container">
+    <div class="section-title" appAnimateOnScroll>
+      <span class="subtitle">Contact</span>
+      <h2>Get In Touch</h2>
+      <p>Have a project in mind? Let's discuss how I can help bring your ideas to life.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info" appAnimateOnScroll animationClass="animate-slide-left">
+        <div class="info-cards">
+          <div class="info-card card-base">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            <div>
+              <h4>Email</h4>
+              <a [href]="'mailto:' + contactInfo().email">{{ contactInfo().email }}</a>
+            </div>
+          </div>
+          <div class="info-card card-base">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+            <div>
+              <h4>Phone</h4>
+              <a [href]="'tel:' + contactInfo().phone">{{ contactInfo().phone }}</a>
+            </div>
+          </div>
+          <div class="info-card card-base">
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            <div>
+              <h4>Address</h4>
+              <span>{{ contactInfo().address }}</span>
+            </div>
+          </div>
+          <div class="info-card card-base">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+            <div>
+              <h4>WhatsApp</h4>
+              <a [href]="'https://wa.me/' + contactInfo().whatsapp" target="_blank" rel="noopener noreferrer">
+                Chat on WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-placeholder card-base">
+          <iframe
+            [src]="contactInfo().mapEmbedUrl | safeUrl"
+            width="100%"
+            height="250"
+            style="border:0; border-radius: 12px;"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Office location map"
+          ></iframe>
+        </div>
+      </div>
+
+      <form class="contact-form card-base" [formGroup]="contactForm" (ngSubmit)="onSubmit()" appAnimateOnScroll animationClass="animate-slide-right">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name *</label>
+            <input id="firstName" type="text" formControlName="firstName" placeholder="John" />
+            @if (getError('firstName')) {
+              <span class="error-msg" role="alert">{{ getError('firstName') }}</span>
+            }
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name *</label>
+            <input id="lastName" type="text" formControlName="lastName" placeholder="Doe" />
+            @if (getError('lastName')) {
+              <span class="error-msg" role="alert">{{ getError('lastName') }}</span>
+            }
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input id="email" type="email" formControlName="email" placeholder="john@email.com" />
+            @if (getError('email')) {
+              <span class="error-msg" role="alert">{{ getError('email') }}</span>
+            }
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input id="phone" type="tel" formControlName="phone" placeholder="+1 (555) 123-4567" />
+            @if (getError('phone')) {
+              <span class="error-msg" role="alert">{{ getError('phone') }}</span>
+            }
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject *</label>
+          <input id="subject" type="text" formControlName="subject" placeholder="Project Inquiry" />
+          @if (getError('subject')) {
+            <span class="error-msg" role="alert">{{ getError('subject') }}</span>
+          }
+        </div>
+        <div class="form-group">
+          <label for="message">Message *</label>
+          <textarea id="message" formControlName="message" rows="5" placeholder="Tell me about your project..."></textarea>
+          @if (getError('message')) {
+            <span class="error-msg" role="alert">{{ getError('message') }}</span>
+          }
+        </div>
+        <app-gradient-button type="submit" icon="fa-solid fa-paper-plane">
+          Send Message
+        </app-gradient-button>
+      </form>
+    </div>
+  </div>
+</section>

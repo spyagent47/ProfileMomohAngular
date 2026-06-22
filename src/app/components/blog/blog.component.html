@@ -1,0 +1,31 @@
+<section id="blog" class="section section-dark" aria-label="Blog section">
+  <div class="container">
+    <div class="section-title" appAnimateOnScroll>
+      <span class="subtitle">Blog</span>
+      <h2>Latest Articles</h2>
+      <p>Insights, tutorials, and thoughts on software development.</p>
+    </div>
+
+    <div class="blog-grid">
+      @for (post of posts(); track post.id) {
+        <article class="blog-card card-base" appAnimateOnScroll>
+          <div class="blog-image">
+            <img [src]="post.image" [alt]="post.title" loading="lazy" appLazyImage />
+            <span class="blog-category">{{ post.category }}</span>
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta">
+              <span><i class="fa-solid fa-calendar" aria-hidden="true"></i> {{ post.date }}</span>
+              <span><i class="fa-solid fa-clock" aria-hidden="true"></i> {{ post.readTime }}</span>
+            </div>
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.excerpt | truncate:120 }}</p>
+            <a [href]="post.url" class="read-more">
+              Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

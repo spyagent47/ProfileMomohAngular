@@ -1,0 +1,81 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+}
+
+.edu-card {
+  padding: 32px;
+  position: relative;
+}
+
+.edu-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: $gradient-primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.edu-duration {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  font-size: 13px;
+  font-weight: 600;
+  color: $primary;
+  background: rgba(56, 189, 248, 0.1);
+  padding: 4px 12px;
+  border-radius: 50px;
+}
+
+.edu-card h3 {
+  font-size: 20px;
+  color: var(--text-color);
+  margin-bottom: 4px;
+}
+
+.edu-institution {
+  font-size: 14px;
+  font-weight: 600;
+  @include gradient-text;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.edu-card p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.edu-courses h4 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 8px;
+}
+
+.course-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.course-tag {
+  padding: 4px 10px;
+  background: rgba(192, 132, 252, 0.1);
+  color: $secondary;
+  border-radius: 50px;
+  font-size: 11px;
+  font-weight: 500;
+}

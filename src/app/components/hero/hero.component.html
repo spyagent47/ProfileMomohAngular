@@ -1,0 +1,67 @@
+<section id="home" class="hero section" aria-label="Hero section">
+  <div class="hero-bg">
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    <div class="floating-shape shape-3"></div>
+  </div>
+
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-image-wrapper animate-fade-in-up animate-delay-2" appAnimateOnScroll animationClass="animate-scale-in">
+        <div class="image-ring">
+          <img [src]="data().image" [alt]="data().name + ' - Developer'" class="hero-img" loading="eager" />
+        </div>
+        <div class="hero-badge badge-1">
+          <i class="fa-brands fa-angular" aria-hidden="true"></i>
+          <span>Angular Expert</span>
+        </div>
+        <div class="hero-badge badge-2">
+          <i class="fa-solid fa-code" aria-hidden="true"></i>
+          <span>5+ Years</span>
+        </div>
+      </div>
+
+      <div class="hero-content" appAnimateOnScroll>
+        <span class="hero-greeting animate-fade-in-up">{{ data().greeting }}</span>
+        <h1 class="hero-name animate-fade-in-up animate-delay-1">
+          I'm <span class="gradient-text">{{ data().name }}</span>
+        </h1>
+        <div class="hero-typing animate-fade-in-up animate-delay-2">
+          <span class="typed-text">{{ typedText() }}</span>
+          <span class="cursor" aria-hidden="true">|</span>
+        </div>
+        <p class="hero-tech animate-fade-in-up animate-delay-3">
+          @for (tech of data().techStack; track tech; let last = $last) {
+            <span>{{ tech }}</span>
+            @if (!last) { <span class="dot">•</span> }
+          }
+        </p>
+        <p class="hero-desc animate-fade-in-up animate-delay-4">{{ data().description }}</p>
+
+        <div class="hero-actions animate-fade-in-up animate-delay-5">
+          <app-gradient-button icon="fa-solid fa-download">
+            <a [href]="data().cvUrl" download class="text-white text-decoration-none">Download CV</a>
+          </app-gradient-button>
+          <app-gradient-button variant="outline" icon="fa-solid fa-handshake" (clicked)="navigateTo('/contact')">
+            Hire Me
+          </app-gradient-button>
+          <app-gradient-button variant="outline" icon="fa-solid fa-folder-open" (clicked)="navigateTo('/', 'projects')">
+            View Projects
+          </app-gradient-button>
+        </div>
+
+        <div class="hero-stats animate-fade-in-up animate-delay-5">
+          @for (stat of data().stats; track stat.label) {
+            <div class="stat-item">
+              <span class="stat-value gradient-text">{{ stat.value }}</span>
+              <span class="stat-label">{{ stat.label }}</span>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
