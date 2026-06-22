@@ -1,6 +1,8 @@
-# Developer Portfolio
+# ProfileMomohAngular
 
-A professional, modern, fully responsive software developer portfolio built with **Angular 20**, **TypeScript**, **Bootstrap 5**, **FontAwesome**, and **Angular Material**.
+Angular developer portfolio — a modern, responsive full-stack developer portfolio showcasing professional accomplishments, experience, technical skills, and featured projects with clean architecture and best coding practices.
+
+Built with **Angular 20**, **TypeScript**, **Bootstrap 5**, **FontAwesome**, and **Angular Material**.
 
 ## Features
 
@@ -15,7 +17,7 @@ A professional, modern, fully responsive software developer portfolio built with
 - Resume download section
 - Premium footer with newsletter
 - Dark/Light mode with localStorage persistence
-- Lazy-loaded home route with mock JSON data
+- Lazy-loaded routes with mock JSON data
 - SEO meta tags, Open Graph, and Twitter Cards
 - Fully responsive (mobile, tablet, desktop)
 
@@ -64,11 +66,6 @@ Output: `dist/developer-portfolio/`
 src/
 ├── app/
 │   ├── components/       # All UI sections
-│   │   ├── shared/       # Reusable buttons, cards, modal
-│   │   ├── navbar/
-│   │   ├── hero/
-│   │   ├── about/
-│   │   └── ...
 │   ├── services/         # Portfolio, Theme, Contact, SEO, Toast
 │   ├── interfaces/       # TypeScript interfaces
 │   ├── models/           # Form models
