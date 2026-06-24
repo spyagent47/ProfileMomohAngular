@@ -150,17 +150,25 @@
   transition: transform 0.3s ease;
 }
 
+.desktop-chevron {
+  display: none;
+  margin-left: 4px;
+
+  @media (min-width: $breakpoint-lg) {
+    display: inline-block;
+  }
+}
+
 .has-submenu {
   @media (min-width: $breakpoint-lg) {
-    &:hover .submenu,
-    &:focus-within .submenu {
+    &.open .submenu {
       opacity: 1;
       visibility: visible;
       transform: translateY(0);
+      pointer-events: auto;
     }
 
-    &:hover .submenu-chevron,
-    &:focus-within .submenu-chevron {
+    &.open .submenu-chevron {
       transform: rotate(180deg);
     }
   }
@@ -187,6 +195,11 @@
   transform: translateY(8px);
   transition: $transition;
   z-index: 100;
+  pointer-events: none;
+
+  .has-submenu.open & {
+    pointer-events: auto;
+  }
 
   &::before {
     content: '';

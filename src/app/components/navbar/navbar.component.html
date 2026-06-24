@@ -23,6 +23,8 @@
                 class="nav-item has-submenu"
                 role="none"
                 [class.open]="isSubmenuOpen(link.route)"
+                (mouseenter)="openSubmenuOnHover(link.route)"
+                (mouseleave)="closeSubmenuOnHover()"
               >
                 <div class="nav-link-row">
                   <a
@@ -37,6 +39,7 @@
                       <i class="fa-solid {{ link.icon }}" aria-hidden="true"></i>
                     }
                     {{ link.label }}
+                    <i class="fa-solid fa-chevron-down submenu-chevron desktop-chevron" aria-hidden="true"></i>
                   </a>
                   <button
                     type="button"
@@ -57,7 +60,7 @@
                         [class.active]="isLinkActive(child)"
                         class="submenu-link"
                         role="menuitem"
-                        (click)="closeMenu()"
+                        (click)="onSubmenuChildClick($event)"
                       >
                         @if (child.icon) {
                           <i class="fa-solid {{ child.icon }}" aria-hidden="true"></i>
@@ -87,47 +90,7 @@
             }
           }
         </ul>
-
-<!--        <div class="nav-actions">-->
-<!--          <a [href]="cvUrl()" class="btn-resume" download aria-label="Download resume">-->
-<!--            <i class="fa-solid fa-download" aria-hidden="true"></i>-->
-<!--            Resume-->
-<!--          </a>-->
-
-<!--          <button-->
-<!--            class="btn-theme"-->
-<!--            (click)="toggleTheme()"-->
-<!--            [attr.aria-label]="isDarkMode() ? 'Switch to light mode' : 'Switch to dark mode'"-->
-<!--          >-->
-<!--            <i [class]="isDarkMode() ? 'fa-solid fa-sun' : 'fa-solid fa-moon'" aria-hidden="true"></i>-->
-<!--          </button>-->
-
-<!--&lt;!&ndash;          <div class="social-icons" aria-label="Social media links">&ndash;&gt;-->
-<!--&lt;!&ndash;            @for (social of socialLinks(); track social.name) {&ndash;&gt;-->
-<!--&lt;!&ndash;              <a&ndash;&gt;-->
-<!--&lt;!&ndash;                [href]="social.url"&ndash;&gt;-->
-<!--&lt;!&ndash;                [attr.aria-label]="social.name"&ndash;&gt;-->
-<!--&lt;!&ndash;                target="_blank"&ndash;&gt;-->
-<!--&lt;!&ndash;                rel="noopener noreferrer"&ndash;&gt;-->
-<!--&lt;!&ndash;                class="social-link"&ndash;&gt;-->
-<!--&lt;!&ndash;              >&ndash;&gt;-->
-<!--&lt;!&ndash;                <i [class]="social.icon" aria-hidden="true"></i>&ndash;&gt;-->
-<!--&lt;!&ndash;              </a>&ndash;&gt;-->
-<!--&lt;!&ndash;            }&ndash;&gt;-->
-<!--&lt;!&ndash;          </div>&ndash;&gt;-->
-<!--        </div>-->
       </div>
-
-<!--      <button-->
-<!--        class="hamburger"-->
-<!--        (click)="toggleMenu()"-->
-<!--        [attr.aria-expanded]="isMenuOpen()"-->
-<!--        aria-label="Toggle navigation menu"-->
-<!--      >-->
-<!--        <span></span>-->
-<!--        <span></span>-->
-<!--        <span></span>-->
-<!--      </button>-->
     </div>
   </div>
 </nav>

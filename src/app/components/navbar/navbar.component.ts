@@ -4,9 +4,12 @@ import {
   signal,
   HostListener,
   ChangeDetectionStrategy,
-  input
+  input,
+  DestroyRef
 } from '@angular/core';
-import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { filter } from 'rxjs';
 import { NavLink, SocialLink } from '../../interfaces/portfolio.interface';
 import { ThemeService } from '../../services/theme.service';
 
@@ -28,14 +31,38 @@ export class NavbarComponent {
 
   private readonly themeService = inject(ThemeService);
   private readonly router = inject(Router);
+  private readonly destroyRef = inject(DestroyRef);
+  private readonly desktopBreakpoint = 992;
+
   readonly isDarkMode = this.themeService.isDarkMode;
   readonly isScrolled = signal(false);
   readonly isMenuOpen = signal(false);
   readonly openSubmenu = signal<string | null>(null);
 
+  constructor() {
+    this.router.events
+      .pipe(
+        filter((event): event is NavigationEnd => event instanceof NavigationEnd),
+        takeUntilDestroyed(this.destroyRef)
+      )
+      .subscribe(() => this.closeSubmenu());
+  }
+
   @HostListener('window:scroll')
   onScroll(): void {
     this.isScrolled.set(window.scrollY > 50);
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent): void {
+    const target = event.target as HTMLElement;
+    if (!target.closest('.has-submenu')) {
+      this.closeSubmenu();
+    }
+  }
+
+  private isDesktop(): boolean {
+    return window.innerWidth >= this.desktopBreakpoint;
   }
 
   toggleMenu(): void {
@@ -44,13 +71,36 @@ export class NavbarComponent {
 
   closeMenu(): void {
     this.isMenuOpen.set(false);
+    this.closeSubmenu();
+  }
+
+  closeSubmenu(): void {
     this.openSubmenu.set(null);
+    this.blurFocusedElement();
+  }
+
+  openSubmenuOnHover(route: string): void {
+    if (this.isDesktop()) {
+      this.openSubmenu.set(route);
+    }
+  }
+
+  closeSubmenuOnHover(): void {
+    if (this.isDesktop()) {
+      this.closeSubmenu();
+    }
   }
 
   toggleSubmenu(route: string, event: Event): void {
     event.preventDefault();
     event.stopPropagation();
     this.openSubmenu.update((current) => (current === route ? null : route));
+  }
+
+  onSubmenuChildClick(event: Event): void {
+    event.stopPropagation();
+    this.closeMenu();
+    this.closeSubmenu();
   }
 
   isSubmenuOpen(route: string): boolean {
@@ -74,5 +124,11 @@ export class NavbarComponent {
 
   toggleTheme(): void {
     this.themeService.toggleTheme();
+  }
+
+  private blurFocusedElement(): void {
+    if (document.activeElement instanceof HTMLElement) {
+      document.activeElement.blur();
+    }
   }
 }
