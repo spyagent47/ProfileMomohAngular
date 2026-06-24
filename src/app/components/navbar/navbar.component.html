@@ -88,46 +88,46 @@
           }
         </ul>
 
-        <div class="nav-actions">
-          <a [href]="cvUrl()" class="btn-resume" download aria-label="Download resume">
-            <i class="fa-solid fa-download" aria-hidden="true"></i>
-            Resume
-          </a>
+<!--        <div class="nav-actions">-->
+<!--          <a [href]="cvUrl()" class="btn-resume" download aria-label="Download resume">-->
+<!--            <i class="fa-solid fa-download" aria-hidden="true"></i>-->
+<!--            Resume-->
+<!--          </a>-->
 
-          <button
-            class="btn-theme"
-            (click)="toggleTheme()"
-            [attr.aria-label]="isDarkMode() ? 'Switch to light mode' : 'Switch to dark mode'"
-          >
-            <i [class]="isDarkMode() ? 'fa-solid fa-sun' : 'fa-solid fa-moon'" aria-hidden="true"></i>
-          </button>
+<!--          <button-->
+<!--            class="btn-theme"-->
+<!--            (click)="toggleTheme()"-->
+<!--            [attr.aria-label]="isDarkMode() ? 'Switch to light mode' : 'Switch to dark mode'"-->
+<!--          >-->
+<!--            <i [class]="isDarkMode() ? 'fa-solid fa-sun' : 'fa-solid fa-moon'" aria-hidden="true"></i>-->
+<!--          </button>-->
 
-          <div class="social-icons" aria-label="Social media links">
-            @for (social of socialLinks(); track social.name) {
-              <a
-                [href]="social.url"
-                [attr.aria-label]="social.name"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="social-link"
-              >
-                <i [class]="social.icon" aria-hidden="true"></i>
-              </a>
-            }
-          </div>
-        </div>
+<!--&lt;!&ndash;          <div class="social-icons" aria-label="Social media links">&ndash;&gt;-->
+<!--&lt;!&ndash;            @for (social of socialLinks(); track social.name) {&ndash;&gt;-->
+<!--&lt;!&ndash;              <a&ndash;&gt;-->
+<!--&lt;!&ndash;                [href]="social.url"&ndash;&gt;-->
+<!--&lt;!&ndash;                [attr.aria-label]="social.name"&ndash;&gt;-->
+<!--&lt;!&ndash;                target="_blank"&ndash;&gt;-->
+<!--&lt;!&ndash;                rel="noopener noreferrer"&ndash;&gt;-->
+<!--&lt;!&ndash;                class="social-link"&ndash;&gt;-->
+<!--&lt;!&ndash;              >&ndash;&gt;-->
+<!--&lt;!&ndash;                <i [class]="social.icon" aria-hidden="true"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;              </a>&ndash;&gt;-->
+<!--&lt;!&ndash;            }&ndash;&gt;-->
+<!--&lt;!&ndash;          </div>&ndash;&gt;-->
+<!--        </div>-->
       </div>
 
-      <button
-        class="hamburger"
-        (click)="toggleMenu()"
-        [attr.aria-expanded]="isMenuOpen()"
-        aria-label="Toggle navigation menu"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+<!--      <button-->
+<!--        class="hamburger"-->
+<!--        (click)="toggleMenu()"-->
+<!--        [attr.aria-expanded]="isMenuOpen()"-->
+<!--        aria-label="Toggle navigation menu"-->
+<!--      >-->
+<!--        <span></span>-->
+<!--        <span></span>-->
+<!--        <span></span>-->
+<!--      </button>-->
     </div>
   </div>
 </nav>
