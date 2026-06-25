@@ -129,14 +129,10 @@
   "services": [
     { "id": 1, "title": "Web Development", "description": "Custom web applications built with modern frameworks, responsive design, and optimal performance.", "icon": "fa-solid fa-globe" },
     { "id": 2, "title": "Mobile Apps", "description": "Cross-platform mobile solutions with native-like performance and seamless user experiences.", "icon": "fa-solid fa-mobile-screen" },
-    { "id": 3, "title": "Desktop Applications", "description": "Robust desktop software for Windows, macOS, and Linux with modern UI frameworks.", "icon": "fa-solid fa-desktop" },
     { "id": 4, "title": "API Development", "description": "RESTful and GraphQL APIs designed for scalability, security, and developer-friendly documentation.", "icon": "fa-solid fa-plug" },
     { "id": 5, "title": "Database Design", "description": "Efficient database schemas, query optimization, and data migration strategies.", "icon": "fa-solid fa-database" },
     { "id": 6, "title": "UI/UX Design", "description": "User-centered design with wireframes, prototypes, and pixel-perfect implementations.", "icon": "fa-solid fa-palette" },
-    { "id": 7, "title": "Cloud Solutions", "description": "Cloud infrastructure setup, deployment pipelines, and cost-optimized architectures.", "icon": "fa-solid fa-cloud" },
-    { "id": 8, "title": "Consultancy", "description": "Technical advisory on architecture decisions, code reviews, and technology roadmaps.", "icon": "fa-solid fa-comments" },
-    { "id": 9, "title": "System Design", "description": "Scalable system architectures for high-traffic applications and distributed systems.", "icon": "fa-solid fa-sitemap" },
-    { "id": 10, "title": "Software Architecture", "description": "Enterprise-grade architecture patterns, microservices, and clean code practices.", "icon": "fa-solid fa-diagram-project" }
+    { "id": 8, "title": "Consultancy", "description": "Technical advisory on architecture decisions, code reviews, and technology roadmaps.", "icon": "fa-solid fa-comments" }
   ],
   "projects": [
     {
